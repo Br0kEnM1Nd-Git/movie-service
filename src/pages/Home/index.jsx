@@ -2,6 +2,7 @@ import api from 'api/api';
 import { useEffect, useState } from 'react';
 import { Container } from 'styles/components.styled';
 import Trending from 'components/Trending';
+import Loading from 'components/helpers/Loading';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -25,13 +26,9 @@ const Home = () => {
 
   return (
     <Container>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>{error}</p>
-      ) : (
+      <Loading isLoading={isLoading} error={error}>
         <Trending movies={movies} />
-      )}
+      </Loading>
     </Container>
   );
 };

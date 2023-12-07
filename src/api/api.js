@@ -3,7 +3,7 @@ import axios from 'axios';
 axios.defaults.params = {
   api_key: 'ac8fbb226a37f835673d1586bcf6a4c6',
 };
-axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.baseURL = 'https://api.themoviedb.orgg/3';
 
 class Api {
   async getTrending() {
